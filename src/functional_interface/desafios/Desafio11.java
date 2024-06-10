@@ -3,22 +3,17 @@ package functional_interface.desafios;
 import java.util.Arrays;
 import java.util.List;
 
-public class Desafio2 {
+public class Desafio11 {
     public static void main(String[] args) {
         // Atributo
         List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 4, 3);
 
-        // Salva os numeros pares em uma nova Lista
-        List<Integer> numerosPares = numeros.stream()
-                .filter(n -> n %2 ==0)
-                .toList();
-
-        // Retorna a soma dos numeros
-        int resultado = numerosPares.stream()
+        // Retorna a soma dos quadrados
+        int somaDosQuadrados = numeros.stream()
+                .map(n -> n * n)
                 .reduce(0, Integer::sum);
 
         // Imprime o resultado
-        System.out.println(resultado);
-
+        System.out.println("Soma do quadrado de todos os numeros: " + somaDosQuadrados);
     }
 }
